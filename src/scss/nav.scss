@@ -1,0 +1,18 @@
+.anps-admin-nav {
+  width: 20%;
+  box-shadow: 1px 0px 0px black;
+  padding: 20px 0;
+
+  li {
+    display: flex;
+    padding: 0 30px;
+    &:first-of-type {
+      a {
+        background-image: url("/wp-content/themes/procoin/anps-framework/images/anpslogo.png");
+        height: 30px;
+        background-repeat: no-repeat;
+        width: 60%;
+      }
+    }
+  }
+}
