@@ -1,6 +1,28 @@
+$main-color: #008dce;
+
 .anps-tmop-root {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   margin-top: 20px;
   background-color: white;
+  width: 80%;
+  gap: 40px;
+}
+
+.admin-modal {
+  width: 70%;
+  padding: 20px 0;
+  i {
+    padding-right: 10px;
+  }
+  &__title {
+    background-color: $main-color;
+    color: white;
+    margin: 0;
+    padding: 10px;
+  }
+
+  &__content {
+    display: flex;
+  }
 }

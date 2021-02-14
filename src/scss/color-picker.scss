@@ -1,0 +1,30 @@
+.anps-color-pick-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  h4 {
+    width: 100%;
+    margin: 20px 0 10px 0;
+  }
+  .anps-color-pick {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+  }
+  i {
+    font-size: 20px;
+    padding: 7px 0;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .sketch-picker {
+    position: absolute;
+    top: 90px;
+  }
+}
