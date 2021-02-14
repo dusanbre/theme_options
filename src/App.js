@@ -13,11 +13,8 @@ import PageLayout from "./pages/PageLayout";
 import PageSetup from "./pages/PageSetup";
 
 const App = () => {
-  const [route, setRoute] = useState();
+  const [route, setRoute] = useState("themeColor");
   const routes = {
-    default: () => {
-      return <ThemeColor />;
-    },
     themeColor: () => {
       return <ThemeColor />;
     },
@@ -43,10 +40,10 @@ const App = () => {
       return <PageSetup />;
     },
   };
-  const render = routes[route] || routes.default;
+  const render = routes[route] || routes.themeColor;
   return (
     <div className="anps-tmop-root">
-      <Nav setRoute={setRoute} />
+      <Nav route={route} setRoute={setRoute} />
       {render()}
     </div>
   );

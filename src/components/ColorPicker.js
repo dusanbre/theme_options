@@ -7,7 +7,6 @@ export default function ColorPicker({ keyIndex, keyName, title }) {
   const [color, setColor] = useState({});
   const [visible, setVisible] = useState(false);
   const [brightness, setBrightness] = useState(false);
-  // console.log(color[keyName]);
 
   const checkHexLight = (color) => {
     const hex = color.replace("#", "");
@@ -33,7 +32,12 @@ export default function ColorPicker({ keyIndex, keyName, title }) {
       >
         {color[keyName]}
       </div>
-      <i className="fa fa-times"></i>
+      <i
+        className="fa fa-times"
+        onClick={() => {
+          setColor({});
+        }}
+      ></i>
 
       {visible ? (
         <SketchPicker

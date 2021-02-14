@@ -1,15 +1,25 @@
+const { useEffect } = wp.element;
 import "../scss/nav.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTint,
+  faTextHeight,
+  faCode,
+  faColumns,
+  faCog,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
-export default function Nav({ setRoute }) {
+export default function Nav({ route, setRoute }) {
   const r = [
-    { value: "themeColor", name: "Main Theme Color" },
-    { value: "typography", name: "Typography" },
-    { value: "buttonMaker", name: "Button Maker" },
-    { value: "googleFonts", name: "Google Fonts" },
-    { value: "customFonts", name: "Custom Fonts" },
-    { value: "customCss", name: "Custom CSS" },
-    { value: "pageLayout", name: "Page Layout" },
-    { value: "pageSetup", name: "Page Setup" },
+    { value: "themeColor", name: "Main Theme Color", icon: faTint },
+    { value: "typography", name: "Typography", icon: faTextHeight },
+    { value: "buttonMaker", name: "Button Maker", icon: faTextHeight },
+    { value: "googleFonts", name: "Google Fonts", icon: faGoogle },
+    { value: "customFonts", name: "Custom Fonts", icon: faTextHeight },
+    { value: "customCss", name: "Custom CSS", icon: faCode },
+    { value: "pageLayout", name: "Page Layout", icon: faColumns },
+    { value: "pageSetup", name: "Page Setup", icon: faCog },
   ];
 
   const setRouteHandler = (e) => {
@@ -30,7 +40,12 @@ export default function Nav({ setRoute }) {
           ? r.map((item) => {
               return (
                 <li key={item.value}>
-                  <button value={item.value} onClick={setRouteHandler}>
+                  <button
+                    value={item.value}
+                    onClick={setRouteHandler}
+                    className={item.value == route ? "active" : ""}
+                  >
+                    <FontAwesomeIcon icon={item.icon} />
                     {item.name}
                   </button>
                 </li>
